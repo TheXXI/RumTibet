@@ -1,0 +1,226 @@
+.popular {
+  text-align: center;
+  padding: 80px 0 100px 0;
+
+  @media screen and (max-width: $md) {
+    text-align: left;
+    padding: 50px 0 50px 0;
+  }
+
+  &__blocks {
+    .blocks {
+      display: flex;
+      justify-content: space-between;
+      margin: 50px 0;
+
+      @media screen and (max-width: ($xl - 1px)) {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media screen and (max-width: 811px) {
+        flex-direction: column;
+      }
+
+      @media screen and (max-width: $md) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: start;
+        width: 100%;
+        overflow: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+
+      &__preview {
+        width: 380px;
+        height: 500px;
+        border-radius: 32px;
+        background-color: #d8d8c1;
+        position: relative;
+        overflow: hidden;
+        background-size: 100% 100%;
+
+        @media screen and (max-width: ($xl - 1px)) {
+          margin-left: 20px;
+        }
+
+        @media screen and (max-width: $md) {
+          min-width: 285px;
+          height: 400px;
+        }
+      }
+
+      &__rating {
+        width: 65px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $rating-bg-color;
+        margin-right: 0;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: $green-color;
+
+        img {
+          margin-right: 4px;
+        }
+
+        span {
+          padding-top: 2px;
+        }
+      }
+
+      &__content {
+        background-color: $form-bg-color;
+        backdrop-filter: blur(2px);
+        color: $white-color;
+        padding: 0 32px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        text-align: left;
+      }
+
+      &__main-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+
+        @media screen and (max-width: $md) {
+          height: 70px;
+        }
+      }
+
+      &__title-subtitle {
+        text-align: left;
+      }
+
+      &__title {
+        font-weight: 700;
+        font-size: 24px;
+        margin: 0;
+
+        @media screen and (max-width: $md) {
+          font-size: 18px;
+        }
+      }
+
+      &__subtitle {
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+
+        @media screen and (max-width: $md) {
+          display: none;
+        }
+      }
+
+      &__price {
+        width: 86px;
+        height: 40px;
+        background-color: $price-bg-color;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 20px;
+
+        @media screen and (max-width: $md) {
+          width: 67px;
+          height: 30px;
+          font-size: 16px;
+        }
+      }
+
+      &__description {
+        display: none;
+      }
+
+      &__button {
+        display: none;
+      }
+
+      &__preview:nth-of-type(1) {
+        background-image: url("../images/popular/photo1.png");
+
+        @media screen and (max-width: ($xl - 1px)) {
+          margin-left: 0px;
+        }
+      }
+
+      &__preview:nth-of-type(2) {
+        background-image: url("../images/popular/photo2.png");
+
+        @media screen and (max-width: 811px) {
+          margin-top: 20px;
+          margin-left: 0;
+        }
+
+        @media screen and (max-width: $md) {
+          margin: 0 20px;
+        }
+      }
+
+      &__preview:nth-of-type(3) {
+        background-image: url("../images/popular/photo3.png");
+
+        @media screen and (max-width: ($xl - 1px)) {
+          margin-top: 20px;
+          margin-left: 0;
+        }
+
+        @media screen and (max-width: $md) {
+          margin-top: 0px;
+        }
+      }
+
+      &__preview {
+        &:hover {
+          .blocks__rating {
+            display: none;
+          }
+          .blocks__content {
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: stretch;
+            padding-top: 10px;
+          }
+          .blocks__description {
+            flex: 1 1 auto;
+            margin: 30px 0;
+            display: block;
+
+            @media screen and (max-width: $md) {
+              display: none;
+            }
+          }
+          .blocks__button {
+            display: block;
+            flex: 0 1 auto;
+            margin-bottom: 20px;
+            width: 176px;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+  }
+}

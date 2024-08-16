@@ -1,0 +1,105 @@
+@mixin image-background {
+  height: 50px;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.offers-background {
+  background-color: $gray-bg-color;
+}
+
+.offers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0 50px 0;
+
+  @media screen and (max-width: ($xl - 1px)) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: $md) {
+    text-align: left;
+    padding: 50px 0 50px 0;
+  }
+
+  &__text-block {
+    max-width: 580px;
+  }
+
+  &__description {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    color: $black-color;
+    margin: 40px 0;
+    line-height: 27px;
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Nunito Sans", sans-serif;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $md) {
+      align-items: start;
+    }
+
+    &__image-background1 {
+      @include image-background;
+      background-color: $offers-icon-bg-color1;
+    }
+
+    &__image-background2 {
+      @include image-background;
+      background-color: $offers-icon-bg-color2;
+    }
+
+    &__image-background3 {
+      @include image-background;
+      background-color: $offers-icon-bg-color3;
+    }
+
+    &__text-block {
+      max-width: 514px;
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 20px;
+      margin-bottom: 4px;
+    }
+
+    &__text {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 20px;
+    }
+  }
+
+  &__photos {
+    width: 510px;
+
+    @media screen and (max-width: ($xl - 1px)) {
+      display: none;
+    }
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  &__button {
+    @media screen and (max-width: $md) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

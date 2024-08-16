@@ -1,0 +1,121 @@
+@mixin select-and-input {
+  background: none;
+  border-radius: 8px;
+  border: 1px solid $form-items-border-color;
+  width: 100%;
+  height: 52px;
+  padding: 0px;
+  color: $white-color;
+  margin-bottom: 4px;
+}
+
+.cover {
+  background-image: url("../images/cover/cover-background.png");
+  background-size: 100% 100%;
+  color: $white-color;
+  padding-top: 551px;
+  padding-bottom: 82px;
+  font-family: "Nunito Sans", sans-serif;
+
+  @media screen and (max-width: $md) {
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 298px;
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: "NEXT ART Bold";
+    font-size: 50px;
+    line-height: 150%;
+    margin-bottom: 41px;
+
+    @media screen and (max-width: ($xl - 1px)) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (max-width: $md) {
+      font-size: 28px;
+      //word-break: break-all;
+    }
+  }
+  &__form {
+    width: 100%;
+    height: 161px;
+    background-color: $form-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    @media screen and (max-width: ($xl - 1px)) {
+      background: none;
+      border-radius: 0px;
+      height: auto;
+    }
+
+    .form {
+      display: flex;
+
+      &__item {
+        width: 270px;
+        margin-right: 24px;
+
+        &:last-child {
+          margin-right: 0px;
+          width: 213px;
+        }
+
+        @media screen and (max-width: ($xl - 1px)) {
+          //background: none;
+          border-radius: 0px;
+
+          &:not(:last-child) {
+            display: none;
+          }
+        }
+      }
+
+      &__select {
+        @include select-and-input;
+        padding: 0 39px 0 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url("../images/cover/appearance.svg") no-repeat right 16px
+          center / 15px auto;
+      }
+
+      &__input {
+        @include select-and-input;
+        background: url("../images/cover/date.svg") no-repeat right 16px center /
+          16px auto;
+        padding: 0 15px 0 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 239px;
+      }
+
+      &__input::placeholder {
+        color: $white-color;
+        opacity: 1;
+      }
+
+      &__label {
+        margin-left: 8px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      &__button {
+        background-color: $white-color;
+        width: 100%;
+        height: 52px;
+        font-weight: 700;
+        color: $green-color;
+      }
+    }
+  }
+}

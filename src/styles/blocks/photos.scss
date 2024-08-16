@@ -1,0 +1,233 @@
+$breakpoint: 912px;
+
+.photos {
+  text-align: center;
+  padding-top: 80px;
+  position: relative;
+
+  @media screen and (max-width: $md) {
+    text-align: left;
+    padding: 50px 0 50px 0;
+  }
+
+  &__margin {
+    height: 40px;
+  }
+
+  &__button {
+    margin: 50px 0 198px 0;
+
+    @media screen and (max-width: $breakpoint) {
+      margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: $md) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__blocks {
+    margin: -10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $breakpoint) {
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow: hidden;
+      overflow-x: scroll;
+      white-space: nowrap;
+    }
+  }
+
+  &__block {
+    height: 250px;
+    margin: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+
+    img {
+      display: none;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:first-child,
+    &:nth-of-type(6) {
+      flex: 1 0 0px;
+
+      @media screen and (max-width: $xl) {
+        width: 100%;
+      }
+    }
+
+    &:not(:first-child) {
+      width: 280px;
+    }
+
+    &:nth-of-type(1) {
+      background-image: url(../images/photos/photo1.png);
+    }
+    &:nth-of-type(2) {
+      background-image: url(../images/photos/photo2.png);
+    }
+    &:nth-of-type(3) {
+      background-image: url(../images/photos/photo3.png);
+    }
+    &:nth-of-type(5) {
+      background-image: url(../images/photos/photo4.png);
+    }
+    &:nth-of-type(6) {
+      background-image: url(../images/photos/photo5.png);
+    }
+    &:nth-of-type(7) {
+      background-image: url(../images/photos/photo6.png);
+    }
+
+    @media screen and (max-width: $breakpoint) {
+      min-width: 280px;
+    }
+  }
+
+  &__block {
+    &:hover {
+      cursor: pointer;
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+.subscribe {
+  position: absolute;
+  bottom: -100px;
+  max-width: $xl;
+  border-radius: 6px;
+  background-color: $white-color;
+  box-shadow: 0 0 15px 0 $shadow;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+  text-align: left;
+
+  @media screen and (max-width: $breakpoint) {
+    position: static;
+  }
+
+  @media screen and (max-width: $xl) {
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+  }
+
+  &__text-mobile {
+    display: none;
+    text-align: left;
+    margin-bottom: 18px;
+
+    @media screen and (max-width: $xl) {
+      display: block;
+    }
+  }
+
+  &__text {
+    @media screen and (max-width: $xl) {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    color: $yellow-color;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 26px;
+    color: $black-color;
+    margin: 0;
+    line-height: 31px;
+  }
+
+  &__form {
+    max-width: 536px;
+    margin-left: 64px;
+
+    @media screen and (max-width: $xl) {
+      margin-left: 0;
+    }
+
+    .form {
+      display: flex;
+      align-items: end;
+
+      @media screen and (max-width: 605px) {
+        flex-wrap: wrap;
+      }
+
+      &__input {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-right: 16px;
+
+        @media screen and (max-width: 605px) {
+          margin-right: 0;
+          margin-bottom: 8px;
+          width: 100%;
+        }
+
+        label {
+          margin-bottom: 8px;
+          font-family: Nunito Sans;
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        input {
+          border: none;
+          background-color: $gray-bg-color;
+          height: 44px;
+          width: 248px;
+          padding: 0 16px;
+          border-radius: 4px;
+
+          @media screen and (max-width: 605px) {
+            max-width: 310px;
+            width: calc(100% - 16px * 2);
+          }
+        }
+      }
+
+      &__button {
+        width: 240px;
+      }
+    }
+  }
+
+  &__privay {
+    color: $black-color;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 8px 0 0 0;
+    padding: 0;
+    a {
+      color: $black-color;
+      text-decoration: underline;
+    }
+  }
+}
